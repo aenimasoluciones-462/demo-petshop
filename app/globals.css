@@ -3,6 +3,7 @@
 @import 'shadcn/tailwind.css';
 
 @theme inline {
+  --breakpoint-xs: 26rem;
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
