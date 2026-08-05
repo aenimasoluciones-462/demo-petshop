@@ -23,7 +23,8 @@ export const CATEGORIES: { id: CategoryId; label: string; short: string }[] = [
   { id: 'accesorios', label: 'Accesorios', short: 'Accesorios' },
 ]
 
-export const WHATSAPP_NUMBER = '56912345678'
+export const WHATSAPP_NUMBER = '56931309610'
+export const WHATSAPP_DISPLAY = '+56 9 3130 9610'
 export const STORE_NAME = 'Aquí Mascotas'
 
 export const PRODUCTS: Product[] = [

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Clock, MapPin, Phone } from 'lucide-react'
-import { WHATSAPP_NUMBER } from '@/lib/products'
+import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from '@/lib/products'
 
 export function SiteFooter() {
   return (
@@ -28,7 +28,7 @@ export function SiteFooter() {
             className="flex items-center gap-2 text-base font-semibold text-primary hover:underline"
           >
             <Phone className="size-4" aria-hidden="true" />
-            +56 9 1234 5678
+            {WHATSAPP_DISPLAY}
           </a>
           <p className="flex items-center gap-2 text-base text-muted-foreground">
             <MapPin className="size-4 shrink-0 text-primary" aria-hidden="true" />
