@@ -27,17 +27,7 @@ export function SiteHeader() {
 
       <div className="sticky top-0 z-40 border-b border-border bg-card/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-2.5 sm:gap-4 sm:py-3">
-          <a href="#inicio" className="flex min-w-0 items-center gap-3">
-            <Image
-              src="/logo-aqui-mascotas.png"
-              alt="Aquí Mascotas, alimento para mascotas y accesorios"
-              width={1170}
-              height={300}
-              priority
-              className="h-9 w-auto max-w-[190px] object-contain sm:h-14 sm:max-w-[320px]"
-            />
-            <span className="sr-only">Aquí Mascotas</span>
-          </a>
+         
 
           <nav aria-label="Secciones" className="ml-auto hidden items-center gap-6 md:flex">
             <a
