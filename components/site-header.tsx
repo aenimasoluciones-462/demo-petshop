@@ -9,14 +9,14 @@ export function SiteHeader() {
   const { count, total, openCart } = useCart()
 
   return (
-    <header className="sticky top-0 z-40">
-      <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 bg-primary px-4 py-2 text-center text-xs font-semibold text-primary-foreground sm:text-sm">
+    <header>
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-0.5 bg-primary px-4 py-1.5 text-center text-[0.7rem] leading-tight font-semibold text-primary-foreground sm:gap-x-6 sm:py-2 sm:text-sm">
         <span className="flex items-center gap-1.5">
-          <Truck className="size-4 shrink-0" aria-hidden="true" />
+          <Truck className="size-3.5 shrink-0 sm:size-4" aria-hidden="true" />
           Delivery en Peñaflor
         </span>
         <span className="flex items-center gap-1.5">
-          <Clock className="size-4 shrink-0" aria-hidden="true" />
+          <Clock className="size-3.5 shrink-0 sm:size-4" aria-hidden="true" />
           Pedidos 24/7 por WhatsApp
         </span>
         <span className="hidden items-center gap-1.5 sm:flex">
@@ -25,8 +25,8 @@ export function SiteHeader() {
         </span>
       </div>
 
-      <div className="border-b border-border bg-card/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
+      <div className="sticky top-0 z-40 border-b border-border bg-card/95 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-2.5 sm:gap-4 sm:py-3">
           <a href="#inicio" className="flex min-w-0 items-center gap-3">
             <Image
               src="/logo-aqui-mascotas.png"
@@ -34,7 +34,7 @@ export function SiteHeader() {
               width={1170}
               height={300}
               priority
-              className="h-11 w-auto max-w-[240px] object-contain sm:h-14 sm:max-w-[320px]"
+              className="h-9 w-auto max-w-[190px] object-contain sm:h-14 sm:max-w-[320px]"
             />
             <span className="sr-only">Aquí Mascotas</span>
           </a>
@@ -63,7 +63,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={openCart}
-            className="ml-auto flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 font-serif text-sm font-bold text-primary-foreground shadow-sm transition-transform hover:scale-[1.03] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none md:ml-0"
+            className="ml-auto flex shrink-0 items-center gap-2 rounded-full bg-primary px-3.5 py-2.5 font-serif text-sm font-bold text-primary-foreground shadow-sm transition-transform hover:scale-[1.03] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none sm:px-4 md:ml-0"
           >
             <span className="relative">
               <ShoppingCart className="size-5" aria-hidden="true" />
@@ -73,7 +73,9 @@ export function SiteHeader() {
                 </span>
               )}
             </span>
-            <span className="hidden sm:inline">{count > 0 ? formatCLP(total) : 'Mi carro'}</span>
+            <span className={count > 0 ? 'inline' : 'hidden sm:inline'}>
+              {count > 0 ? formatCLP(total) : 'Mi carro'}
+            </span>
             <span className="sr-only">Abrir carro de compras</span>
           </button>
         </div>
