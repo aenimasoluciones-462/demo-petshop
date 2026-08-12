@@ -2,14 +2,21 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
-import { Plus } from 'lucide-react'
+import { Check, Plus } from 'lucide-react'
 import { useCart } from '@/components/cart-provider'
 import { formatCLP, type Product } from '@/lib/products'
 
 export function ProductCard({ product }: { product: Product }) {
   const { add } = useCart()
   const [selected, setSelected] = useState(product.variants[0].label)
+  const [added, setAdded] = useState(false)
   const variant = product.variants.find((v) => v.label === selected) ?? product.variants[0]
+
+  const handleAdd = () => {
+    add(product, variant)
+    setAdded(true)
+    setTimeout(() => setAdded(false), 1500)
+  }
 
   return (
     <article className="flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md">
@@ -79,11 +86,24 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
           <button
             type="button"
-            onClick={() => add(product, variant)}
-            className="flex items-center gap-1.5 rounded-full bg-primary px-4 py-2.5 font-serif text-sm font-bold text-primary-foreground transition-transform hover:scale-[1.04]"
+            onClick={handleAdd}
+            className={`flex items-center gap-1.5 rounded-full px-4 py-2.5 font-serif text-sm font-bold transition-all duration-200 ${
+              added
+                ? 'bg-emerald-600 text-white scale-[1.04]'
+                : 'bg-primary text-primary-foreground hover:scale-[1.04]'
+            }`}
           >
-            <Plus className="size-4" aria-hidden="true" />
-            Agregar
+            {added ? (
+              <>
+                <Check className="size-4" aria-hidden="true" />
+                ¡Agregado!
+              </>
+            ) : (
+              <>
+                <Plus className="size-4" aria-hidden="true" />
+                Agregar
+              </>
+            )}
             <span className="sr-only">
               {product.name} formato {variant.label} al carro
             </span>
