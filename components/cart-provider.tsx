@@ -54,7 +54,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         },
       ]
     })
-    setIsOpen(true)
   }, [])
 
   const setQty = useCallback((key: string, qty: number) => {
