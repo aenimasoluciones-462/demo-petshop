@@ -14,19 +14,12 @@ export function CartPanel() {
   const [notes, setNotes] = useState('')
 
   function buildMessage() {
-    const items = lines
-      .map(
-        (line) =>
-          `• ${line.qty} x ${line.brand} ${line.name} (${line.variant}) — ${formatCLP(
-            line.price * line.qty,
-          )}`,
-      )
-      .join('\n')
+   
 
     return [
       `¡Hola ${STORE_NAME}! Quiero hacer este pedido:`,
       '',
-      items,
+     
       '',
      
       '',
@@ -141,9 +134,7 @@ export function CartPanel() {
                           <span className="sr-only">Agregar una unidad</span>
                         </button>
                       </div>
-                      <p className="font-serif text-base font-extrabold text-foreground">
-                        {formatCLP(line.price * line.qty)}
-                      </p>
+                    
                     </div>
                   </div>
                 </li>
