@@ -76,14 +76,7 @@ export function ProductCard({ product }: { product: Product }) {
         </fieldset>
 
         <div className="mt-auto flex items-end justify-between gap-3 pt-1">
-          <div>
-            <p className="font-serif text-2xl font-extrabold text-foreground">
-              {formatCLP(variant.price)}
-            </p>
-            <p className="text-xs font-semibold text-muted-foreground">
-              Formato {variant.label} · IVA incluido
-            </p>
-          </div>
+       
           <button
             type="button"
             onClick={handleAdd}
