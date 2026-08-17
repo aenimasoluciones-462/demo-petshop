@@ -182,10 +182,7 @@ export function CartPanel() {
               </label>
 
               <div className="flex items-center justify-between pt-1">
-                <span className="font-serif text-base font-bold text-foreground">Total</span>
-                <span className="font-serif text-2xl font-extrabold text-foreground">
-                  {formatCLP(total)}
-                </span>
+              
               </div>
 
               <a
