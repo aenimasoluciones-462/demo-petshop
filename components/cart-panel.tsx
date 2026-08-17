@@ -28,7 +28,7 @@ export function CartPanel() {
       '',
       items,
       '',
-      `TOTAL: ${formatCLP(total)}`,
+     
       '',
       `Nombre: ${name || '(por confirmar)'}`,
       `Dirección de despacho: ${address || '(por confirmar)'}`,
