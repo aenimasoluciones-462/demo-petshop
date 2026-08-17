@@ -64,7 +64,7 @@ export function SiteHeader() {
               )}
             </span>
             <span className={count > 0 ? 'inline' : 'hidden sm:inline'}>
-              {count > 0 ? formatCLP(total) : 'Mi carro'}
+              Mi carro
             </span>
             <span className="sr-only">Abrir carro de compras</span>
           </button>
